@@ -1,6 +1,7 @@
 package ex03.pyrmont.connector.http;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Collection;
 import java.util.Locale;
@@ -11,6 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HttpResponse implements HttpServletResponse {
 
+	OutputStream output;
+	HttpRequest request;
+	
+	public HttpResponse(OutputStream output) {
+		this.output = output;
+	}
+	
+	public void setRequest(HttpRequest request) {
+		this.request = request;
+	}
+	
 	@Override
 	public void flushBuffer() throws IOException {
 

@@ -12,10 +12,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import ex02.pyrmont.Constants;
-import ex02.pyrmont.RequestFacade;
-import ex02.pyrmont.ResponseFacade;
 import ex03.pyrmont.connector.http.HttpRequest;
+import ex03.pyrmont.connector.http.HttpRequestFacade;
 import ex03.pyrmont.connector.http.HttpResponse;
+import ex03.pyrmont.connector.http.HttpResponseFacade;
 
 public class ServletProcessor {
 
@@ -45,13 +45,14 @@ public class ServletProcessor {
 		}
 		
 		Servlet servlet = null;
-		RequestFacade requestFacade = new RequestFacade(request);
-		ResponseFacade responseFacade = new ResponseFacade(response);
+		HttpRequestFacade requestFacade = new HttpRequestFacade(request);
+		HttpResponseFacade responseFacade = new HttpResponseFacade(response);
 		
 		try {
 			servlet = (Servlet)myClass.newInstance();
 			//实际调用
 			servlet.service((ServletRequest)requestFacade, (ServletResponse)responseFacade);
+			//finishResponse
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

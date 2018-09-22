@@ -12,6 +12,7 @@ import java.security.PrivilegedExceptionAction;
 import java.security.PrivilegedActionException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1192,6 +1193,26 @@ public class HttpResponseBase
 
     }
 
+
+	@Override
+	public void setCharacterEncoding(String charset) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void setContentLengthLong(long len) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public Collection<String> getHeaders(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
 

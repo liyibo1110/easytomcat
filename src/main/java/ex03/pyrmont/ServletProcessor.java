@@ -21,7 +21,7 @@ public class ServletProcessor {
 
 	public void process(HttpRequest request, HttpResponse response) {
 		
-		String uri = request.getUri();	///servlet/aaaServlet
+		String uri = request.getRequestURI();	///servlet/aaaServlet
 		String servletName = uri.substring(uri.lastIndexOf("/")+1);
 		URLClassLoader loader = null;
 		

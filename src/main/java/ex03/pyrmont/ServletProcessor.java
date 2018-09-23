@@ -51,8 +51,9 @@ public class ServletProcessor {
 		try {
 			servlet = (Servlet)myClass.newInstance();
 			//实际调用
-			servlet.service((ServletRequest)requestFacade, (ServletResponse)responseFacade);
+			servlet.service(requestFacade, responseFacade);
 			//finishResponse
+			response.finishResponse();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

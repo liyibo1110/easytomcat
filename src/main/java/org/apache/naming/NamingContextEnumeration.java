@@ -64,11 +64,12 @@
 
 package org.apache.naming;
 
-import java.util.Vector;
 import java.util.Enumeration;
-import javax.naming.NamingException;
-import javax.naming.NamingEnumeration;
+import java.util.Vector;
+
 import javax.naming.NameClassPair;
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
 
 /**
  * Naming enumeration implementation.
@@ -85,12 +86,12 @@ public class NamingContextEnumeration
 
 
     public NamingContextEnumeration(Vector entries) {
-        enum = entries.elements();
+        enum1 = entries.elements();
     }
 
 
-    public NamingContextEnumeration(Enumeration enum) {
-        this.enum = enum;
+    public NamingContextEnumeration(Enumeration enum1) {
+        this.enum1 = enum1;
     }
 
 
@@ -100,7 +101,7 @@ public class NamingContextEnumeration
     /**
      * Underlying enumeration.
      */
-    protected Enumeration enum;
+    protected Enumeration enum1;
 
 
     // --------------------------------------------------------- Public Methods
@@ -120,7 +121,7 @@ public class NamingContextEnumeration
      */
     public boolean hasMore()
         throws NamingException {
-        return enum.hasMoreElements();
+        return enum1.hasMoreElements();
     }
 
 
@@ -133,12 +134,12 @@ public class NamingContextEnumeration
 
 
     public boolean hasMoreElements() {
-        return enum.hasMoreElements();
+        return enum1.hasMoreElements();
     }
 
 
     public Object nextElement() {
-        NamingEntry entry = (NamingEntry) enum.nextElement();
+        NamingEntry entry = (NamingEntry) enum1.nextElement();
         return new NameClassPair(entry.name, entry.value.getClass().getName());
     }
 

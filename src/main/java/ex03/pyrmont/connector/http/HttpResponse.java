@@ -9,7 +9,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -335,11 +334,6 @@ public class HttpResponse implements HttpServletResponse {
 	}
 
 	@Override
-	public String getContentType() {
-		return this.contentType;
-	}
-
-	@Override
 	public Locale getLocale() {
 		return null;
 	}
@@ -377,11 +371,6 @@ public class HttpResponse implements HttpServletResponse {
 	public void setBufferSize(int arg0) {
 
 	}
-	
-	@Override
-	public void setCharacterEncoding(String arg0) {
-
-	}
 
 	@Override
 	public void setContentLength(int length) {
@@ -390,14 +379,13 @@ public class HttpResponse implements HttpServletResponse {
 	}
 
 	@Override
-	public void setContentLengthLong(long arg0) {
-
-	}
-
-	@Override
 	public void setContentType(String type) {
 		if(isCommitted()) return;
 		this.contentType = type;
+	}
+	
+	public String getContentType() {
+		return this.contentType;
 	}
 
 	@Override
@@ -482,26 +470,6 @@ public class HttpResponse implements HttpServletResponse {
 	@Override
 	public String encodeUrl(String url) {
 		return encodeURL(url);
-	}
-
-	@Override
-	public String getHeader(String arg0) {
-		return null;
-	}
-
-	@Override
-	public Collection<String> getHeaderNames() {
-		return null;
-	}
-
-	@Override
-	public Collection<String> getHeaders(String arg0) {
-		return null;
-	}
-
-	@Override
-	public int getStatus() {
-		return 0;
 	}
 
 	@Override

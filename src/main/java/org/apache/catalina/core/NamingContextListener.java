@@ -67,20 +67,14 @@ package org.apache.catalina.core;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.Hashtable;
 import java.util.Enumeration;
+import java.util.Hashtable;
 import java.util.StringTokenizer;
+
 import javax.naming.NamingException;
 import javax.naming.Reference;
 import javax.naming.StringRefAddr;
-import org.apache.naming.NamingContext;
-import org.apache.naming.ContextBindings;
-import org.apache.naming.ContextAccessController;
-import org.apache.naming.EjbRef;
-import org.apache.naming.ResourceRef;
-import org.apache.naming.ResourceEnvRef;
-import org.apache.naming.ResourceLinkRef;
-import org.apache.naming.TransactionRef;
+
 import org.apache.catalina.Container;
 import org.apache.catalina.ContainerEvent;
 import org.apache.catalina.ContainerListener;
@@ -98,6 +92,14 @@ import org.apache.catalina.deploy.ContextResourceLink;
 import org.apache.catalina.deploy.NamingResources;
 import org.apache.catalina.deploy.ResourceParams;
 import org.apache.catalina.util.StringManager;
+import org.apache.naming.ContextAccessController;
+import org.apache.naming.ContextBindings;
+import org.apache.naming.EjbRef;
+import org.apache.naming.NamingContext;
+import org.apache.naming.ResourceEnvRef;
+import org.apache.naming.ResourceLinkRef;
+import org.apache.naming.ResourceRef;
+import org.apache.naming.TransactionRef;
 
 
 /**
@@ -1059,9 +1061,9 @@ public class NamingContextListener
         if (resourceParameters == null)
             return;
         Hashtable params = resourceParameters.getParameters();
-        Enumeration enum = params.keys();
-        while (enum.hasMoreElements()) {
-            String paramName = (String) enum.nextElement();
+        Enumeration enum1 = params.keys();
+        while (enum1.hasMoreElements()) {
+            String paramName = (String) enum1.nextElement();
             String paramValue = (String) params.get(paramName);
             StringRefAddr refAddr = new StringRefAddr(paramName, paramValue);
             ref.add(refAddr);

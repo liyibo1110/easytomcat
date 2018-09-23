@@ -32,11 +32,6 @@ public class ResponseFacade implements ServletResponse {
 	}
 
 	@Override
-	public String getContentType() {
-		return response.getContentType();
-	}
-
-	@Override
 	public Locale getLocale() {
 		return response.getLocale();
 	}
@@ -72,18 +67,8 @@ public class ResponseFacade implements ServletResponse {
 	}
 
 	@Override
-	public void setCharacterEncoding(String arg0) {
-		response.setCharacterEncoding(arg0);
-	}
-
-	@Override
 	public void setContentLength(int arg0) {
 		response.setContentLength(arg0);
-	}
-
-	@Override
-	public void setContentLengthLong(long arg0) {
-		response.setContentLengthLong(arg0);
 	}
 
 	@Override

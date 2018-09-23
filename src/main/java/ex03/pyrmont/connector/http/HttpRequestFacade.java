@@ -4,25 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.Principal;
-import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.DispatcherType;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpUpgradeHandler;
-import javax.servlet.http.Part;
 
 public class HttpRequestFacade implements HttpServletRequest {
 
@@ -30,11 +20,6 @@ public class HttpRequestFacade implements HttpServletRequest {
 	
 	public HttpRequestFacade(HttpServletRequest request) {
 		this.request = request;
-	}
-	
-	@Override
-	public AsyncContext getAsyncContext() {
-		return request.getAsyncContext();
 	}
 
 	@Override
@@ -58,38 +43,13 @@ public class HttpRequestFacade implements HttpServletRequest {
 	}
 
 	@Override
-	public long getContentLengthLong() {
-		return request.getContentLengthLong();
-	}
-
-	@Override
 	public String getContentType() {
 		return request.getContentType();
 	}
 
 	@Override
-	public DispatcherType getDispatcherType() {
-		return request.getDispatcherType();
-	}
-
-	@Override
 	public ServletInputStream getInputStream() throws IOException {
 		return request.getInputStream();
-	}
-
-	@Override
-	public String getLocalAddr() {
-		return request.getLocalAddr();
-	}
-
-	@Override
-	public String getLocalName() {
-		return request.getLocalName();
-	}
-
-	@Override
-	public int getLocalPort() {
-		return request.getLocalPort();
 	}
 
 	@Override
@@ -148,11 +108,6 @@ public class HttpRequestFacade implements HttpServletRequest {
 	}
 
 	@Override
-	public int getRemotePort() {
-		return request.getRemotePort();
-	}
-
-	@Override
 	public RequestDispatcher getRequestDispatcher(String arg0) {
 		return request.getRequestDispatcher(arg0);
 	}
@@ -173,21 +128,6 @@ public class HttpRequestFacade implements HttpServletRequest {
 	}
 
 	@Override
-	public ServletContext getServletContext() {
-		return request.getServletContext();
-	}
-
-	@Override
-	public boolean isAsyncStarted() {
-		return request.isAsyncStarted();
-	}
-
-	@Override
-	public boolean isAsyncSupported() {
-		return request.isAsyncSupported();
-	}
-
-	@Override
 	public boolean isSecure() {
 		return request.isSecure();
 	}
@@ -205,26 +145,6 @@ public class HttpRequestFacade implements HttpServletRequest {
 	@Override
 	public void setCharacterEncoding(String arg0) throws UnsupportedEncodingException {
 		request.setCharacterEncoding(arg0);
-	}
-
-	@Override
-	public AsyncContext startAsync() throws IllegalStateException {
-		return request.startAsync();
-	}
-
-	@Override
-	public AsyncContext startAsync(ServletRequest arg0, ServletResponse arg1) throws IllegalStateException {
-		return request.startAsync(arg0, arg1);
-	}
-
-	@Override
-	public boolean authenticate(HttpServletResponse arg0) throws IOException, ServletException {
-		return request.authenticate(arg0);
-	}
-
-	@Override
-	public String changeSessionId() {
-		return request.changeSessionId();
 	}
 
 	@Override
@@ -270,16 +190,6 @@ public class HttpRequestFacade implements HttpServletRequest {
 	@Override
 	public String getMethod() {
 		return request.getMethod();
-	}
-
-	@Override
-	public Part getPart(String arg0) throws IOException, ServletException {
-		return request.getPart(arg0);
-	}
-
-	@Override
-	public Collection<Part> getParts() throws IOException, ServletException {
-		return request.getParts();
 	}
 
 	@Override
@@ -361,20 +271,4 @@ public class HttpRequestFacade implements HttpServletRequest {
 	public boolean isUserInRole(String arg0) {
 		return request.isUserInRole(arg0);
 	}
-
-	@Override
-	public void login(String arg0, String arg1) throws ServletException {
-		request.login(arg0, arg1);
-	}
-
-	@Override
-	public void logout() throws ServletException {
-		request.logout();
-	}
-
-	@Override
-	public <T extends HttpUpgradeHandler> T upgrade(Class<T> arg0) throws IOException, ServletException {
-		return request.upgrade(arg0);
-	}
-
 }

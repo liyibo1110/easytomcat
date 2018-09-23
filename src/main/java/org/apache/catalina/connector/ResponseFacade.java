@@ -267,27 +267,4 @@ public class ResponseFacade implements ServletResponse {
     public Locale getLocale() {
         return response.getLocale();
     }
-
-
-	@Override
-	public String getContentType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public void setCharacterEncoding(String charset) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void setContentLengthLong(long len) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }

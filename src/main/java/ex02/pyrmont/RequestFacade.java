@@ -7,13 +7,9 @@ import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.DispatcherType;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletInputStream;
 import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 
 public class RequestFacade implements ServletRequest {
 
@@ -23,11 +19,6 @@ public class RequestFacade implements ServletRequest {
 		this.request = request;
 	}
 	
-	@Override
-	public AsyncContext getAsyncContext() {
-		return request.getAsyncContext();
-	}
-
 	@Override
 	public Object getAttribute(String arg0) {
 		return request.getAttribute(arg0);
@@ -49,38 +40,13 @@ public class RequestFacade implements ServletRequest {
 	}
 
 	@Override
-	public long getContentLengthLong() {
-		return request.getContentLengthLong();
-	}
-
-	@Override
 	public String getContentType() {
 		return request.getContentType();
 	}
 
 	@Override
-	public DispatcherType getDispatcherType() {
-		return request.getDispatcherType();
-	}
-
-	@Override
 	public ServletInputStream getInputStream() throws IOException {
 		return request.getInputStream();
-	}
-
-	@Override
-	public String getLocalAddr() {
-		return request.getLocalAddr();
-	}
-
-	@Override
-	public String getLocalName() {
-		return request.getLocalName();
-	}
-
-	@Override
-	public int getLocalPort() {
-		return request.getLocalPort();
 	}
 
 	@Override
@@ -139,11 +105,6 @@ public class RequestFacade implements ServletRequest {
 	}
 
 	@Override
-	public int getRemotePort() {
-		return request.getRemotePort();
-	}
-
-	@Override
 	public RequestDispatcher getRequestDispatcher(String arg0) {
 		return request.getRequestDispatcher(arg0);
 	}
@@ -161,21 +122,6 @@ public class RequestFacade implements ServletRequest {
 	@Override
 	public int getServerPort() {
 		return request.getServerPort();
-	}
-
-	@Override
-	public ServletContext getServletContext() {
-		return request.getServletContext();
-	}
-
-	@Override
-	public boolean isAsyncStarted() {
-		return request.isAsyncStarted();
-	}
-
-	@Override
-	public boolean isAsyncSupported() {
-		return request.isAsyncSupported();
 	}
 
 	@Override
@@ -197,15 +143,4 @@ public class RequestFacade implements ServletRequest {
 	public void setCharacterEncoding(String arg0) throws UnsupportedEncodingException {
 		request.setCharacterEncoding(arg0);
 	}
-
-	@Override
-	public AsyncContext startAsync() throws IllegalStateException {
-		return request.startAsync();
-	}
-
-	@Override
-	public AsyncContext startAsync(ServletRequest arg0, ServletResponse arg1) throws IllegalStateException {
-		return request.startAsync(arg0, arg1);
-	}
-
 }

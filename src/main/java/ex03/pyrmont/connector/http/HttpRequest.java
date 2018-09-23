@@ -11,7 +11,6 @@ import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -20,20 +19,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.DispatcherType;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpUpgradeHandler;
-import javax.servlet.http.Part;
 
 import org.apache.catalina.util.Enumerator;
 import org.apache.catalina.util.ParameterMap;
@@ -233,11 +223,6 @@ public class HttpRequest implements HttpServletRequest {
 	public void setRequestedSessionURL(boolean flag) {
 		requestedSessionURL = flag;
 	}
-	
-	@Override
-	public AsyncContext getAsyncContext() {
-		return null;
-	}
 
 	@Override
 	public Object getAttribute(String name) {
@@ -264,18 +249,8 @@ public class HttpRequest implements HttpServletRequest {
 	}
 
 	@Override
-	public long getContentLengthLong() {
-		return this.contentLength;
-	}
-
-	@Override
 	public String getContentType() {
 		return this.contentType;
-	}
-
-	@Override
-	public DispatcherType getDispatcherType() {
-		return null;
 	}
 
 	@Override
@@ -288,21 +263,6 @@ public class HttpRequest implements HttpServletRequest {
 			this.stream = createInputStream();
 		}
 		return this.stream;
-	}
-
-	@Override
-	public String getLocalAddr() {
-		return null;
-	}
-
-	@Override
-	public String getLocalName() {
-		return null;
-	}
-
-	@Override
-	public int getLocalPort() {
-		return 0;
 	}
 
 	@Override
@@ -386,11 +346,6 @@ public class HttpRequest implements HttpServletRequest {
 	}
 
 	@Override
-	public int getRemotePort() {
-		return 0;
-	}
-
-	@Override
 	public RequestDispatcher getRequestDispatcher(String arg0) {
 		return null;
 	}
@@ -411,21 +366,6 @@ public class HttpRequest implements HttpServletRequest {
 	}
 
 	@Override
-	public ServletContext getServletContext() {
-		return null;
-	}
-
-	@Override
-	public boolean isAsyncStarted() {
-		return false;
-	}
-
-	@Override
-	public boolean isAsyncSupported() {
-		return false;
-	}
-
-	@Override
 	public boolean isSecure() {
 		return false;
 	}
@@ -443,26 +383,6 @@ public class HttpRequest implements HttpServletRequest {
 	@Override
 	public void setCharacterEncoding(String arg0) throws UnsupportedEncodingException {
 
-	}
-
-	@Override
-	public AsyncContext startAsync() throws IllegalStateException {
-		return null;
-	}
-
-	@Override
-	public AsyncContext startAsync(ServletRequest arg0, ServletResponse arg1) throws IllegalStateException {
-		return null;
-	}
-
-	@Override
-	public boolean authenticate(HttpServletResponse arg0) throws IOException, ServletException {
-		return false;
-	}
-
-	@Override
-	public String changeSessionId() {
-		return null;
 	}
 
 	@Override
@@ -566,16 +486,6 @@ public class HttpRequest implements HttpServletRequest {
 	}
 
 	@Override
-	public Part getPart(String arg0) throws IOException, ServletException {
-		return null;
-	}
-
-	@Override
-	public Collection<Part> getParts() throws IOException, ServletException {
-		return null;
-	}
-
-	@Override
 	public String getPathInfo() {
 		return this.pathInfo;
 	}
@@ -658,20 +568,4 @@ public class HttpRequest implements HttpServletRequest {
 	public boolean isUserInRole(String arg0) {
 		return false;
 	}
-
-	@Override
-	public void login(String arg0, String arg1) throws ServletException {
-
-	}
-
-	@Override
-	public void logout() throws ServletException {
-
-	}
-
-	@Override
-	public <T extends HttpUpgradeHandler> T upgrade(Class<T> arg0) throws IOException, ServletException {
-		return null;
-	}
-
 }

@@ -89,11 +89,6 @@ public class Response implements ServletResponse {
 	}
 
 	@Override
-	public String getContentType() {
-		return null;
-	}
-
-	@Override
 	public Locale getLocale() {
 		return null;
 	}
@@ -124,17 +119,7 @@ public class Response implements ServletResponse {
 	}
 
 	@Override
-	public void setCharacterEncoding(String arg0) {
-
-	}
-
-	@Override
 	public void setContentLength(int arg0) {
-
-	}
-
-	@Override
-	public void setContentLengthLong(long arg0) {
 
 	}
 

@@ -65,11 +65,11 @@
 package org.apache.catalina.connector;
 
 
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
-import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
+
 import org.apache.catalina.Request;
 import org.apache.catalina.util.StringManager;
 
@@ -241,30 +241,4 @@ public class RequestStream
         return (actuallyRead);
 
     }
-
-
-
-	@Override
-	public boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-
-	@Override
-	public boolean isReady() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-
-	@Override
-	public void setReadListener(ReadListener readListener) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
 }

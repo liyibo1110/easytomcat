@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.servlet.ServletOutputStream;
-import javax.servlet.WriteListener;
 
 import ex03.pyrmont.connector.http.HttpResponse;
 
@@ -193,17 +192,5 @@ public class ResponseStream extends ServletOutputStream {
     void reset() {
         count = 0;
     }
-
-	@Override
-	public boolean isReady() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setWriteListener(WriteListener writeListener) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 

@@ -8,24 +8,25 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 // import java.net.URL;
 import java.security.AccessController;
-import java.security.PrivilegedExceptionAction;
 import java.security.PrivilegedActionException;
+import java.security.PrivilegedExceptionAction;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.TimeZone;
+
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpUtils;
-import org.apache.catalina.HttpResponse;
+
 import org.apache.catalina.Globals;
+import org.apache.catalina.HttpResponse;
 import org.apache.catalina.Logger;
 import org.apache.catalina.util.CookieTools;
 import org.apache.catalina.util.URL;
@@ -1192,27 +1193,5 @@ public class HttpResponseBase
         this.message = message;
 
     }
-
-
-	@Override
-	public void setCharacterEncoding(String charset) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void setContentLengthLong(long len) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public Collection<String> getHeaders(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
 

@@ -33,11 +33,6 @@ public class HttpResponseFacade implements HttpServletResponse {
 	}
 
 	@Override
-	public String getContentType() {
-		return response.getContentType();
-	}
-
-	@Override
 	public Locale getLocale() {
 		return response.getLocale();
 	}
@@ -73,18 +68,8 @@ public class HttpResponseFacade implements HttpServletResponse {
 	}
 
 	@Override
-	public void setCharacterEncoding(String arg0) {
-		response.setCharacterEncoding(arg0);
-	}
-
-	@Override
 	public void setContentLength(int arg0) {
 		response.setContentLength(arg0);
-	}
-
-	@Override
-	public void setContentLengthLong(long arg0) {
-		response.setContentLengthLong(arg0);
 	}
 
 	@Override
@@ -140,26 +125,6 @@ public class HttpResponseFacade implements HttpServletResponse {
 	@Override
 	public String encodeUrl(String arg0) {
 		return response.encodeUrl(arg0);
-	}
-
-	@Override
-	public String getHeader(String arg0) {
-		return response.getHeader(arg0);
-	}
-
-	@Override
-	public Collection<String> getHeaderNames() {
-		return response.getHeaderNames();
-	}
-
-	@Override
-	public Collection<String> getHeaders(String arg0) {
-		return response.getHeaders(arg0);
-	}
-
-	@Override
-	public int getStatus() {
-		return response.getStatus();
 	}
 
 	@Override

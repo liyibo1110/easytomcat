@@ -11,6 +11,7 @@ import javax.naming.directory.DirContext;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.Cluster;
 import org.apache.catalina.Container;
@@ -188,6 +189,7 @@ public class SimpleContainer implements Container {
 		Servlet servlet = null;
 		try {
 			servlet = (Servlet)myClass.newInstance();
+			servlet.service((HttpServletRequest)request, (HttpServletResponse)response);
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

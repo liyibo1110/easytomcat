@@ -46,7 +46,6 @@ public class SimpleWrapperValve implements Valve, Contained {
 		ServletRequest sreq = request.getRequest();
 		ServletResponse sres = response.getResponse();
 		
-		
 		HttpServletRequest hreq = null;
 		if(sreq instanceof HttpServletRequest) hreq = (HttpServletRequest)sreq;
 		HttpServletResponse hres = null;

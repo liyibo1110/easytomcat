@@ -19,7 +19,7 @@ public class PrimitiveServlet implements Servlet {
 						throws ServletException, IOException {
 		System.out.println("from service");
 		PrintWriter out = response.getWriter();
-		out.println("Hello. Roses are red.");	//此版本不会真的输出
+		out.println("Hello. Roses are red.");
 		out.print("Violets are blue");
 		out.flush();
 	}

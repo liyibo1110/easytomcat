@@ -1,4 +1,4 @@
-package ex05.pyrmont.core;
+package ex06.pyrmont.core;
 
 import java.io.IOException;
 

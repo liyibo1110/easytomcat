@@ -13,7 +13,7 @@ import org.apache.catalina.deploy.SecurityConstraint;
 
 public class SimpleContextConfig implements LifecycleListener {
 
-	private Context context;
+private Context context;
 	
 	@Override
 	public void lifecycleEvent(LifecycleEvent event) {
@@ -55,7 +55,7 @@ public class SimpleContextConfig implements LifecycleListener {
 		
 		//也得有值
 		if(this.context.getRealm() == null) return;
-		//开始增加验证器
+		//开始动态增加验证器
 		String authenticatorName = "org.apache.catalina.authenticator.BasicAuthenticator";
 		Valve authenticator = null;
 	
@@ -68,4 +68,5 @@ public class SimpleContextConfig implements LifecycleListener {
 			e.printStackTrace();
 		}
 	}
+
 }

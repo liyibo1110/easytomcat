@@ -3,7 +3,6 @@ package ex14.pyrmont.startup;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 public class Stopper {
 
